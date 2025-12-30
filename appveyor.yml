@@ -8,10 +8,6 @@ branches:
     - master
 
 install:
-  - sudo apt-get update
-  - sudo apt-get install -y google-chrome-stable
-  - java -version
-  - google-chrome --version
   - java -jar ./artifacts/app-card-delivery.jar &
 
 build_script:

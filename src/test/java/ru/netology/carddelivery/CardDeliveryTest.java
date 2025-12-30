@@ -20,6 +20,8 @@ public class CardDeliveryTest {
                 .plusDays(3)
                 .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
+        String expectedText = "Встреча успешно забронирована на " + meetingDate;
+
         $("[data-test-id=city] input").sendKeys("Москва");
 
         var dateInput = $("[data-test-id=date] input");
@@ -36,7 +38,6 @@ public class CardDeliveryTest {
         $("[data-test-id=notification]")
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
                 .shouldHave(Condition.text("Успешно!"))
-                .shouldHave(Condition.text(meetingDate));
+                .shouldHave(Condition.text(expectedText));
     }
 }
-
